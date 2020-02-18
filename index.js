@@ -5,6 +5,7 @@ const https = require('https');
 const { TOKEN, URL } = require('./config.json');
 const format = args.f || args.format || 'svg';
 const dir = args.d || args.dir || './';
+const size = args.s || args.size || '1';
 const main = async () => {
   const file = args['_'][0];
   if (args.h || args.help) {
@@ -53,7 +54,7 @@ const exportFile = async (file, id, name, format) => {
         headers: { 'X-FIGMA-TOKEN': TOKEN }
       }
     );
-    const localFile = fs.createWriteStream(`${dir}/${name}.${format}`);
+    const localFile = fs.createWriteStream(`${dir}/${name}-${size}x.${format}`);
     https.get(data.images[id], response => {
       response.pipe(localFile);
     });
