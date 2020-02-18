@@ -1,0 +1,15 @@
+{
+  "name": "figma-export",
+  "version": "0.0.1",
+  "description": "Figma export assets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tiago Drumond",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "minimist": "^1.2.0"
+  }
+}
